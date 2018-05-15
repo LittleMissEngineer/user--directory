@@ -5,9 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>User Directory</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+   <link rel ="stylesheet" href ="index.css">
 </head>
 <body>
-    <h1>User Directory</h1>
+ <div class="container">
+                     
+    <h1 id ="heading"><center>User Directory</center></h1>
+    <h2 id = "title"><center>This contains sensitive information</center></h2>
+    <h3 id = "viewing"><center>Viewer Discretion is Advised</center></h3>
+    <h4 id = "viewed"><center>Please delete after reading</center></h4>
+
+    <center><button onclick="changeText()">Surprise 1!</button></center>
+    <center><button onclick="changeMessage()">Surprise 2!</button></center>
+    <center> <button onclick="hiddenMessage()">Surprise 3!</button></center>
+    <center><button onclick="ourMistake()">Surprise 4!</button><br><br><br></center>
+
+
+<center><form id = "submit" action="/action_page.php">Enter real birthday:<input type="text" name= "Enter text"></form><br></center>
+<center><button onclick="submission()">Submit</button></center>
+
+</div>
+    <script src = "index.js"></script>
 </body>
 </html>
