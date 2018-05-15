@@ -2,10 +2,10 @@ const form = document.querySelector('form#userForm')
 
 const handleSubmit = function(ev) {
   ev.preventDefault()
-  const form = ev.target
+  
   const userName = form.userName.value
   const age = form.age.value
-  const favoriteColor = form.favoriteColor.value
+ 
 
   const users = document.querySelector('#users')
 
@@ -20,11 +20,18 @@ const handleSubmit = function(ev) {
   const colorItem = document.createElement('li')
   colorItem.textContent = 'Favorite Color: '
 
-  const colorDiv = document.createElement('div')
-  colorDiv.style.backgroundColor = favoriteColor
-  colorDiv.style.width = '6rem'
-  colorDiv.style.height = '3rem'
-  colorItem.appendChild(colorDiv)
+ function renderColor(){
+     //debugger
+     const colorDiv = document.createElement('div')
+    const form = ev.target
+    const favoriteColor = form.favoriteColor.value
+    colorDiv.style.backgroundColor = favoriteColor
+    colorDiv.style.width = '6rem'
+    colorDiv.style.height = '3rem'
+    colorItem.appendChild(colorDiv)
+}
+renderColor()
+
 
   list.appendChild(nameItem)
   list.appendChild(ageItem)
@@ -32,7 +39,7 @@ const handleSubmit = function(ev) {
 
   users.appendChild(list)
 
-  form.reset()
+  //form.reset()
   form.userName.focus()
 }
 

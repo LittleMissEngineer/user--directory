@@ -1,4 +1,8 @@
 body{
-    font-family: 'Times New Roman', Times, serif
-    
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    position: relative;
+    top: 110px;
+    left: 20px;
+    background-image: url(http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/Hi-Tech-Wallpaper-39.jpg) ;
 }
