@@ -1,34 +1,39 @@
-console.log('It works!')
+const form = document.querySelector('form#userForm')
 
-let counter = 0;
-const changeText = function(){
-    document.getElementById('heading').innerHTML = "SUUUUUUURRRRPRRRIIISSSEEEE!"
-    counter = counter + 1
-    if(counter > 2){
-        document.getElementById('title').innerHTML = "HAPPY BIRTHDAY!"
-    }
+const handleSubmit = function(ev) {
+  ev.preventDefault()
+  const form = ev.target
+  const userName = form.userName.value
+  const age = form.age.value
+  const favoriteColor = form.favoriteColor.value
+
+  const users = document.querySelector('#users')
+
+  const list = document.createElement('ul')
+
+  const nameItem = document.createElement('li')
+  nameItem.textContent = `Name: ${userName}`
+
+  const ageItem = document.createElement('li')
+  ageItem.textContent = `Age: ${age}`
+
+  const colorItem = document.createElement('li')
+  colorItem.textContent = 'Favorite Color: '
+
+  const colorDiv = document.createElement('div')
+  colorDiv.style.backgroundColor = favoriteColor
+  colorDiv.style.width = '6rem'
+  colorDiv.style.height = '3rem'
+  colorItem.appendChild(colorDiv)
+
+  list.appendChild(nameItem)
+  list.appendChild(ageItem)
+  list.appendChild(colorItem)
+
+  users.appendChild(list)
+
+  form.reset()
+  form.userName.focus()
 }
 
-const changeMessage = function(){
-    document.getElementById('title').innerHTML = "This is actually a birthday card in disguise!"
-}
-const hiddenMessage = function(){
-    document.getElementById('viewing').innerHTML = "It's not your birthday?"
-}
-  const ourMistake = function(){
-    document.getElementById('viewed').innerHTML = "Opps...."
-  }  
-
-  const submission = function(){
-
-    let x = document.getElementById('submit').elements[0].value
-
-    document.getElementById('viewed').innerHTML = x
-    
-
-  }
-    
-
-
-const button = document.querySelector('button')
-button.addEventListener('click', changeText)
+form.addEventListener('submit', handleSubmit)
